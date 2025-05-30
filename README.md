@@ -18,7 +18,6 @@ While this specification can be used and implemented by anyone, we have identifi
 We expect vendors to adopt the Instrumentation Score as a standard metric in their platforms. This provides:
 - **Consistent Quality Assessment**: Standardized scoring across different tools and platforms
 - **Customer Value**: Clear instrumentation quality insights for users
-- **Competitive Advantage**: Advanced instrumentation guidance capabilities
 - **Customer Advisory**: Use the spec as a framework when advising customers on instrumentation best practices
 
 ### 👩‍💻 Observability & Engineering Teams
