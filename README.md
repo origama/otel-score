@@ -9,6 +9,32 @@
 
 The **Instrumentation Score** is a standardized, vendor-neutral metric that quantifies the quality of OpenTelemetry instrumentation. Represented as a numerical value from **10 to 100**, it provides objective feedback on how well a service or system follows OpenTelemetry best practices and semantic conventions.
 
+## Target Audience
+
+While this specification can be used and implemented by anyone, we have identified key audiences who will benefit most from the Instrumentation Score:
+
+### 🏢 Observability Platform Vendors
+
+We expect vendors to adopt the Instrumentation Score as a standard metric in their platforms. This provides:
+- **Consistent Quality Assessment**: Standardized scoring across different tools and platforms
+- **Customer Value**: Clear instrumentation quality insights for users
+- **Competitive Advantage**: Advanced instrumentation guidance capabilities
+- **Customer Advisory**: Use the spec as a framework when advising customers on instrumentation best practices
+
+### 👩‍💻 Observability & Engineering Teams
+
+Observability engineers and engineering teams are the primary users who will interpret and act on Instrumentation Scores:
+- **Quality Assessment**: Understand instrumentation health at a glance
+- **Improvement Guidance**: Get actionable insights for better instrumentation
+- **Vendor Independence**: Carry knowledge between different observability platforms
+- **Team Communication**: Use common vocabulary when discussing instrumentation quality
+
+We encourage these teams to join the project and contribute their expertise:
+- **Real-world Experience**: Share insights about what constitutes good vs. bad instrumentation
+- **Rule Development**: Help define and refine scoring criteria
+- **Use Case Validation**: Ensure rules reflect practical observability needs
+- **Community Growth**: Expand the collective knowledge base
+
 ### Why Instrumentation Score?
 
 As OpenTelemetry adoption grows, organizations face challenges with instrumentation quality:

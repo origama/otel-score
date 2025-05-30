@@ -13,6 +13,30 @@ The introduction of such a standard score offers several significant benefits:
 
 This specification is presented as an initial draft (Version 0.1) and is being initiated as an open-source effort by [OllyGarden](https://olly.garden), with the explicit goal of soliciting community feedback and eventually hosting it under an open governance model, hopefully integrated into the OpenTelemetry project. It focuses on defining the core scoring framework, the structure of the rules, and the calculation methodology, rather than mandating or endorsing any specific software tool for its implementation.
 
+## **Target Audience**
+
+This specification is designed for technical stakeholders involved in implementing, adopting, or evaluating the Instrumentation Score standard:
+
+### **Tool and Platform Implementers**
+
+- **Observability Platform Vendors**: Teams building commercial or open-source observability platforms who want to integrate standardized instrumentation scoring, and who can use the spec as a framework when advising customers on instrumentation best practices
+- **Tool Developers**: Engineers creating standalone tools for instrumentation analysis and scoring
+- **Integration Engineers**: Technical teams implementing the score calculation within existing observability infrastructure
+
+### **Technical Decision Makers**
+
+- **Platform Engineering Teams**: Engineers responsible for observability strategy and tooling decisions within organizations
+- **SRE and DevOps Teams**: Teams evaluating instrumentation quality assessment solutions for their production environments
+- **Engineering Managers**: Technical leaders assessing the value and feasibility of adopting instrumentation scoring standards
+
+### **Community Contributors**
+
+- **OpenTelemetry Contributors**: Community members interested in extending or refining the scoring methodology
+- **Observability Engineers**: Practitioners with real-world experience who can contribute insights about effective instrumentation patterns
+- **Standards Enthusiasts**: Technical professionals interested in contributing to open observability standards
+
+This specification assumes familiarity with OpenTelemetry concepts, OTLP data formats, and observability engineering practices.
+
 ## **Learning from Prior Art in Scoring**
 
 Before defining the specifics, it's valuable to consider established scoring systems in other technical domains:
@@ -47,7 +71,7 @@ It is explicitly **not** the goal of this specification to:
 
 ### **Overview**
 
-The Instrumentation Score is a numerical value between 10 (Poor) and 100 (Excellent). It assesses the quality of instrumentation based on the automated analysis of OTLP telemetry data streams, primarily focusing on Traces and associated Resource attributes in its initial conception, with potential future expansion to Metrics and Logs. The score is typically calculated per `service.name`, representing the quality over a defined sliding time window (defaulting to 30 days). Implementations may support aggregation to higher levels (e.g., organization-wide), potentially applying additional rules at that level. The calculation relies on applying a defined set of Rules to the observed telemetry. Implementations MUST NOT include other rules to the instrumentation score that don’t belong to the specification: the instrumentation score obtained by a service using a specific implementation must yield the same instrumentation score when using a different implementation. If an implementation doesn’t implement all rules, they MUST provide information to their users that the instrumentation score might not be complete.
+The Instrumentation Score is a numerical value between 10 (Poor) and 100 (Excellent). It assesses the quality of instrumentation based on the automated analysis of OTLP telemetry data streams, primarily focusing on Traces and associated Resource attributes in its initial conception, with potential future expansion to Metrics and Logs. The score is typically calculated per `service.name`, representing the quality over a defined sliding time window (defaulting to 30 days). Implementations may support aggregation to higher levels (e.g., organization-wide), potentially applying additional rules at that level. The calculation relies on applying a defined set of Rules to the observed telemetry. Implementations MUST NOT include other rules to the instrumentation score that don't belong to the specification: the instrumentation score obtained by a service using a specific implementation must yield the same instrumentation score when using a different implementation. If an implementation doesn't implement all rules, they MUST provide information to their users that the instrumentation score might not be complete.
 
 ### **Rules**
 
