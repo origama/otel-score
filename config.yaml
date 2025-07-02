@@ -1,0 +1,7 @@
+repositories:
+  - name: prom1
+    type: prometheus
+    endpoint: http://localhost:9090
+  - name: loki1
+    type: loki
+    endpoint: http://localhost:3100
